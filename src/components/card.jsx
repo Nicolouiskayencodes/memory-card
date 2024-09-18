@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { useRef } from "react";
 
 export default function Cards(){
   const [cardArray, setCardArray] = useState([]);
   const [selected, setSelected] = useState([]);
   const [streak, setStreak] = useState(0);
   const [high, setHigh] = useState(0);
-  let mounted = true;
+  const mounted = useRef(true);
   const fetchImages = async () => {
     await fetch('https://pokeapi.co/api/v2/pokemon/ludicolo', {mode: 'cors'}).then(
       function(response) {
@@ -122,10 +123,10 @@ export default function Cards(){
     })
   }
   useEffect(()=>{
-    if (mounted){
+    if (mounted.current){
       fetchImages();
     }
-      return ()=>{mounted=false}
+      return ()=>{mounted.current=false}
 }, [])
 
 function shuffle(array) { 
