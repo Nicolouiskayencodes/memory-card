@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
+import '../styles/card.css';
 
 export default function Cards(){
   const [cardArray, setCardArray] = useState([]);
@@ -143,8 +144,10 @@ function Card({pokemon}){
   if (selected.includes(pokemon.name)){
     setStreak(0);
     setSelected([]);
-    setHigh(streak);
     setCardArray(shuffledCards);
+    if (high < streak) {
+      setHigh(streak);
+    }
   } else {
     setStreak(streak+1);
     setSelected([...selected, pokemon.name])
@@ -161,9 +164,15 @@ function Card({pokemon}){
 
     return(
   <>
-  <p>Streak: {streak}</p>
-  <p>High score: {high}</p>
+  <header>
+    <h1>Memory Card Game</h1>
+    <p>Earn points by selecting pokemon but don{"'"}t select the same one!</p>
+    {(streak === 16)?<p>You got all 16!</p> : <p>Streak: {streak}</p>}
+    <p>High score: {high}</p>
+  </header>
+  <div className="card-container">
   {cardArray.map(pokemon => <Card key={pokemon.name} pokemon={pokemon}/>)}
+  </div>
   </>
     );
 }
