@@ -178,7 +178,7 @@ function Lose(){
   <header>
     <h1>Memory Card Game</h1>
     <p>High score: {high}</p>
-    <p>Earn points by selecting pokemon but don{"'"}t select the same one!</p>
+    <p>Earn points by selecting pokemon but don{"'"}t select a repeat!</p>
     {(streak === 16)?<p className="">You got all 16!</p> : <p>Streak: {streak}</p>}
   </header>
   <div className="card-container">
