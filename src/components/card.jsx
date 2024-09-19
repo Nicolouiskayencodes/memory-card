@@ -8,6 +8,7 @@ export default function Cards(){
   const [selected, setSelected] = useState([]);
   const [streak, setStreak] = useState(0);
   const [high, setHigh] = useState(0);
+  const [last, setLast] = useState(0);
   const mounted = useRef(true);
   const fetchImages = async () => {
     await fetch('https://pokeapi.co/api/v2/pokemon/ludicolo', {mode: 'cors'}).then(
@@ -129,6 +130,11 @@ export default function Cards(){
     }
       return ()=>{mounted.current=false}
 }, [])
+  useEffect(()=>{
+    if (last !== 0){
+      setTimeout(()=>document.querySelector('dialog').close(), 2000)
+    }
+  }, [last])
 
 function shuffle(array) { 
   for (let i = array.length - 1; i > 0; i--) { 
@@ -145,6 +151,7 @@ function Card({pokemon}){
     setStreak(0);
     setSelected([]);
     setCardArray(shuffledCards);
+    setLast(streak);
     if (high < streak) {
       setHigh(streak);
     }
@@ -152,6 +159,7 @@ function Card({pokemon}){
     setStreak(streak+1);
     setSelected([...selected, pokemon.name])
     setCardArray(shuffledCards);
+    setLast(0);
   }
   }
   return (
@@ -161,18 +169,22 @@ function Card({pokemon}){
     </button>
   )
 }
+function Lose(){
+  return <dialog open><p>You clicked a repeat! Your streak was {last}</p></dialog>
+}
 
     return(
   <>
   <header>
     <h1>Memory Card Game</h1>
-    <p>Earn points by selecting pokemon but don{"'"}t select the same one!</p>
-    {(streak === 16)?<p>You got all 16!</p> : <p>Streak: {streak}</p>}
     <p>High score: {high}</p>
+    <p>Earn points by selecting pokemon but don{"'"}t select the same one!</p>
+    {(streak === 16)?<p className="">You got all 16!</p> : <p>Streak: {streak}</p>}
   </header>
   <div className="card-container">
   {cardArray.map(pokemon => <Card key={pokemon.name} pokemon={pokemon}/>)}
   </div>
+  {last && <Lose />}
   </>
     );
 }
