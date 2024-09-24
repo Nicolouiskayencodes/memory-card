@@ -11,112 +11,112 @@ export default function Cards(){
   const [last, setLast] = useState(0);
   const mounted = useRef(true);
   const fetchImages = async () => {
-    await fetch('https://pokeapi.co/api/v2/pokemon/ludicolo', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/ludicolo', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:'Ludicolo'}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/pikachu', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/pikachu', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:'Pikachu'}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/staryu', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/staryu', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:'Staryu'}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/clefairy', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/clefairy', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:'Clefairy'}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/pidgey', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/pidgey', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:'Pidgey'}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/weezing', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/weezing', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:"Weezing"}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/wobbuffet', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/wobbuffet', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:"Wobbuffet"}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/magikarp', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/magikarp', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:"Magikarp"}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/mankey', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/mankey', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:"Mankey"}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/sudowoodo', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/sudowoodo', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:"Sudowoodo"}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/gengar', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/gengar', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:"Gengar"}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/mudkip', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/mudkip', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:"Mudkip"}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/ditto', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/ditto', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:"Ditto"}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/charizard', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/charizard', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:"Charizard"}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/squirtle', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/squirtle', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
     .then(function(response) {
       setCardArray(cardArray=>[...cardArray, {url:response.sprites.other['official-artwork'].front_default, name:"Squirtle"}])
     })
-    await fetch('https://pokeapi.co/api/v2/pokemon/ivysaur', {mode: 'cors'}).then(
+    fetch('https://pokeapi.co/api/v2/pokemon/ivysaur', {mode: 'cors'}).then(
       function(response) {
       return response.json()
     })
@@ -184,7 +184,7 @@ function Lose(){
   <div className="card-container">
   {cardArray.map(pokemon => <Card key={pokemon.name} pokemon={pokemon}/>)}
   </div>
-  {last && <Lose />}
+  {last !==0 && <Lose />}
   </>
     );
 }
